@@ -1,0 +1,135 @@
+:root {
+    color-scheme: light dark;
+
+    --display: flex;
+    --radius: 30px;
+    --padding: 20px;
+    --font-size: 2em;
+    --table-width: 400px;
+
+    --primary: #FF644C;
+    --secondary: #219f69;
+    --background: #f4f5ff;
+}
+
+@media (prefers-color-scheme:dark) {
+    :root {
+        --primary: #006a81;
+        --secondary: #00844b;
+        --background: #2b2b2b;
+    }
+}
+
+body {
+    margin: auto;
+    padding: var(--padding);
+    font-size: var(--font-size);
+    background-color: var(--background);
+}
+
+header,
+footer {
+    text-align: center;
+    margin: var(--padding);
+    padding: var(--padding);
+    border-radius: var(--radius);
+    outline: 2px solid var(--secondary);
+}
+
+header>figure>img {
+    width: 60vw;
+}
+
+header>h1 {
+    margin: 0.3em;
+    color: var(--primary);
+    font-size: calc(var(--font-size) + 1em);
+}
+
+header>h2 {
+    color: var(--secondary);
+}
+
+main>article {
+    flex-wrap: wrap;
+    display: var(--display);
+    justify-content: space-evenly;
+}
+
+section {
+    margin: var(--padding);
+    border-radius: var(--radius);
+    outline: 2px solid var(--primary);
+}
+
+section>div {
+    text-align: center;
+    color: whitesmoke;
+    padding: var(--padding);
+    border-radius: var(--radius) var(--radius) 0 0;
+    background-color: var(--primary);
+}
+
+section:hover {
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+table {
+    padding: var(--padding);
+    min-width: var(--table-width);
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+table>tr {
+    justify-content: space-between;
+}
+
+table>tr>td:nth-child(2) {
+    width: 80px;
+}
+
+footer {
+    font-size: 0.7em;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer>span {
+    color: var(--primary);
+}
+
+footer>p {
+    margin: var(--padding);
+}
+
+@media(max-width:740px) {
+    :root {
+        --padding: 12px;
+        --font-size: 1.3em;
+        --table-width: 300px;
+    }
+
+    table>tr>td:nth-child(2) {
+        width: 70px;
+    }
+}
+
+@media(max-width:678px) {
+    :root {
+        --font-size: 1.6em;
+        --table-width: calc(90vw - var(--padding));
+    }
+}
+
+@media(max-width:420px) {
+    :root {
+        --font-size: 1.3em;
+    }
+}
+
+@media(max-width:320px) {
+    :root {
+        --font-size: auto;
+        --item-width: auto;
+    }
+}
